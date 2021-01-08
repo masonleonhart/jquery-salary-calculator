@@ -1,0 +1,54 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #DFDCE3;
+}
+
+.container {
+    min-height: 50%;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 0;
+    width: fit-content;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #565656;
+    color: #DFDCE3;
+}
+
+main {
+    padding: 10px;
+}
+
+.addInput {
+    margin: 5px;
+}
+
+#fn {
+    margin-left: 0;
+}
+
+#as {
+    margin-right: 0px;
+}
+
+#submitBtn {
+    float: right;
+    border: none;
+    background-color: #565656;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}

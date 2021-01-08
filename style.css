@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    min-height: 50%;
+    min-height: 75%;
     border: 3px solid black;
     border-radius: 10px;
     padding: 0;
@@ -47,8 +47,36 @@ main {
     float: right;
     border: none;
     background-color: #565656;
-    color: white;
+    color: #DFDCE3;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+}
+
+table, th, td {
+    border: 2px solid #565656;
+    border-collapse: collapse;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #565656;
+    color: #DFDCE3;
+    padding: 5px;
+    text-align: center;
+}
+
+td {
+    padding: 5px;
+}
+
+tr:nth-child(odd) {
+    background-color: #EFEFEF;
+}
+
+.tabSalary {
+    text-align: right;
 }

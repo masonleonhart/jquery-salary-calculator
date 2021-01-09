@@ -28,7 +28,15 @@ $(document).ready(function() {
 
         appendData();
     });
+
+    $('tbody').on('click', '.tDeleteBtn', deleteRow)
 });
+
+let deleteRow = (event) => {
+    // remove the grandparent of the delete button that was clicked (tr)
+    
+    $(event.target).parent().parent().remove();
+};
 
 const appendData = () => {
     // clear the table body and append everything that is stored

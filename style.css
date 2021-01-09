@@ -43,19 +43,23 @@ main {
     margin-right: 0px;
 }
 
-#submitBtn {
-    float: right;
+button {
     border: none;
-    background-color: #565656;
-    color: #DFDCE3;
-    font-weight: bold;
+    font-weight: 550;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#submitBtn {
+    float: right;
+    background-color: #565656;
+    color: #DFDCE3;
 }
 
 table, th, td {
     border: 2px solid #565656;
     border-collapse: collapse;
+    
 }
 
 table {
@@ -77,6 +81,19 @@ tr:nth-child(odd) {
     background-color: #EFEFEF;
 }
 
-.tabSalary {
+.tSalary {
     text-align: right;
+}
+
+.tDeleteBtnTd {
+    text-align: center;
+}
+
+.tDeleteBtn {
+    background-color: #FF3B3F;
+    color: white;
+}
+
+.tDeleteBtn:nth-child(odd) {
+    color: #EFEFEF;
 }

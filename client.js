@@ -22,22 +22,22 @@ $(document).ready(function() {
             
             alert("Please format salary without any characters e.g. 58000");
             return;
-        } 
+        };
 
         employees.push(employee);
-        $('.addInput').val('') 
+        $('.addInput').val('');
 
         appendData();
     });
 
-    $('tbody').on('click', '.tDeleteBtn', deleteRow) // listens for deleteBtn click
+    $('tbody').on('click', '.tDeleteBtn', deleteRow); // listens for deleteBtn click
 });
 
 let deleteRow = (event) => {
     // removes selected employee from global array and calls appendData to rebuild
     // the list
 
-    employees.splice($(event.target).parent().parent().attr('arraypos') ,1)
+    employees.splice($(event.target).parent().parent().attr('arraypos') ,1);
 
     appendData();
 };
@@ -61,7 +61,7 @@ const appendData = () => {
         minimumFractionDigits: 2,
     });
 
-    let objectCounter = -1
+    let objectCounter = -1;
 
     $('tbody').empty();
     

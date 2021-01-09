@@ -29,13 +29,16 @@ $(document).ready(function() {
         appendData();
     });
 
-    $('tbody').on('click', '.tDeleteBtn', deleteRow)
+    $('tbody').on('click', '.tDeleteBtn', deleteRow) // listens for deleteBtn click
 });
 
 let deleteRow = (event) => {
-    // remove the grandparent of the delete button that was clicked (tr)
-    
-    $(event.target).parent().parent().remove();
+    // removes selected employee from global array and calls appendData to rebuild
+    // the list
+
+    employees.splice($(event.target).parent().parent().attr('arraypos') ,1)
+
+    appendData();
 };
 
 const appendData = () => {
@@ -57,11 +60,16 @@ const appendData = () => {
         minimumFractionDigits: 2,
     });
 
+    let objectCounter = -1
+
     $('tbody').empty();
     
     for (let employee of employees) {
         // uses the .format string method with rules saved in salary variable to format
-        // the salary input into a a USD formatted number
+        // the salary input into a a USD formatted number, attatches an array
+        // position attribute to each item created on screen
+
+        objectCounter++;
 
         $('tbody').append(`
             <tr>
@@ -73,5 +81,7 @@ const appendData = () => {
                 <td class="tDeleteBtnTd"><button class="tDeleteBtn">Delete</td>
             </tr>
         `);
+
+        $('tr').last().attr('arraypos', `${objectCounter}`);
     };
 };

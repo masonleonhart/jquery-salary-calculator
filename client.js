@@ -5,7 +5,8 @@ $(document).ready(function() {
 
     $('#submitBtn').on('click', function() {
         // listen for submit button click, add data as an 
-        // object to global array, and append data to DOM function
+        // object to global array, reset input value, and call append data 
+        // to DOM function
 
         let employee = {
             firstName: $('#fn').val(),
@@ -19,7 +20,7 @@ $(document).ready(function() {
             // if there there is a dollar sign, decimal, or comma in string, alert user
             // "Please format number without any characters e.g. 5800" and exit function
             
-            alert("Please format salary without any characters e.g. 5800");
+            alert("Please format salary without any characters e.g. 58000");
             return;
         } 
 
@@ -72,7 +73,7 @@ const appendData = () => {
         objectCounter++;
 
         $('tbody').append(`
-            <tr>
+            <tr arraypos="${objectCounter}">
                 <td>${employee.firstName}</td>
                 <td>${employee.lastName}</td>
                 <td>${employee.id}</td>
@@ -81,7 +82,5 @@ const appendData = () => {
                 <td class="tDeleteBtnTd"><button class="tDeleteBtn">Delete</td>
             </tr>
         `);
-
-        $('tr').last().attr('arraypos', `${objectCounter}`);
     };
 };

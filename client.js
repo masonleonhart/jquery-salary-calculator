@@ -44,7 +44,8 @@ let deleteRow = (event) => {
 
 const appendData = () => {
     // clear the table body and append everything that is stored
-    // in global employees array
+    // in global employees array, calculate the total monthly salary for everyone in the table
+    // and append to dom. 
 
     // object and methods to convert number to currency format found at
     // https://www.geeksforgeeks.org/how-to-format-numbers-as-currency-string-in-javascript/
@@ -62,15 +63,17 @@ const appendData = () => {
     });
 
     let objectCounter = -1;
+    let totalMoSalary = 0;
 
     $('tbody').empty();
-    
+
     for (let employee of employees) {
         // uses the .format string method with rules saved in salary variable to format
         // the salary input into a a USD formatted number, attatches an array
         // position attribute to each item created on screen
 
         objectCounter++;
+        totalMoSalary += Number(employee.annualSalary);
 
         $('tbody').append(`
             <tr arraypos="${objectCounter}">
@@ -82,5 +85,17 @@ const appendData = () => {
                 <td class="tDeleteBtnTd"><button class="tDeleteBtn">Delete</td>
             </tr>
         `);
+    };
+
+    totalMoSalary /= 12;
+    $('#totalSalary').text(salary.format(totalMoSalary));
+
+    if (totalMoSalary >= 20000) {
+        // If the total monthyl salary exceeds $20,000, change background color of total monthly
+        // salary on DOM to red. else, change background color to normal background
+
+        $('footer h4').css('background-color', '#FF3B3F')
+    } else {
+        $('footer h4').css('background-color', '#DFDCE3')
     };
 };

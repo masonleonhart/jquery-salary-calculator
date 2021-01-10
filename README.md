@@ -20,6 +20,10 @@ application will let you know by highlighting the total monthly salary field in 
 1. jQuery
 2. Bootstrap
 
+## Installation
+
+There are no crazy installation steps, just run the application in your preferred web browser.
+
 ## Usage
 
 1. Run application
@@ -31,3 +35,11 @@ application will let you know by highlighting the total monthly salary field in 
 
 1. jQuery
 2. Bootstrap
+
+## Ackowledgement 
+
+Thank you to Blaine and Mary, as well as the rest of the EDA staff. I am so grateful and happy to be learning everything that you have to teach me.
+
+## Support
+
+If you have suggestions or issues, please email me at mason.leonhart@gmail.com
